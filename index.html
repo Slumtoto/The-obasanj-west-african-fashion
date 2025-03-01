@@ -2,20 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shop</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Obasanjo West African Fashion</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+header {
+                    background: #8B0000;
+                    color: white;
+                    padding: 20px;
+                }
+                .logo {
+                    width: 100px;
+                }
+                nav ul {
+                    list-style: none;
+                    padding: 0;
+                }
+                nav ul li {
+                    display: inline;
+                    margin: 0 15px;
+                }
+                nav a {
+                    text-decoration: none;
+                    color: #8B0000;
+                    font-weight: bold;
+                }
+          
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+
+    text-align: center;
+    width: 200px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #4a2c2a;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #6b403e;
+}
+
+    </style>
 </head>
 <body>
-    <h1>Shop Our Collection</h1>
-    <div class="product-gallery">
-        {% for product in products %}
-        <div class="product-item">
-            <img src="{{ url_for('static', filename='images/' ~ product.image) }}" alt="{{ product.name }}">
-            <h2>{{ product.name }}</h2>
-            <p>{{ product.description }}</p>
-            <p>Price: ${{ product.price }}</p>
+    <header>
+        <img src="the obasanjo west african fashion img4.jpg" alt="Obasanjo Fashion Logo" class="logo">
+        <h1>Obasanjo West African Fashion</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="yy.html">Home</a></li>
+            <li><a href="index.html">Shop</a></li>
+            <li><a href="#cart">about us </a></li>
+            <li><a href="#contact">Contact us</a></li>
+        </ul>
+    </nav>
+  
+    
+    <main>
+        <h2>Shop</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be inserted here dynamically -->
         </div>
-        {% endfor %}
-    </div>
+    </main>
+    
+    <script>
+        const products = [
+            { id: 1, name: "Agbada Royal", price: 120, image: "agbada.jpg" },
+            { id: 2, name: "Kente Elegance", price: 90, image: "kente.jpg" },
+            { id: 3, name: "Dashiki Prestige", price: 60, image: "dashiki.jpg" }
+        ];
+        
+        const productGrid = document.getElementById("product-grid");
+        
+        products.forEach(product => {
+            const productCard = document.createElement("div");
+            productCard.classList.add("product");
+            productCard.innerHTML = `
+                <img src="images/${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>$${product.price}</p>
+                <button onclick="addToCart(${product.id})">Add to Cart</button>
+            `;
+            productGrid.appendChild(productCard);
+        });
+        
+        function addToCart(id) {
+            alert("Added to cart: " + products.find(p => p.id === id).name);
+        }
+    </script>
 </body>
 </html>
+

@@ -25,13 +25,13 @@
         <h2>Our Collection</h2>
         <div class="product-container">
             <div class="product" data-name="Royal Agbada" data-price="150">
-                <img src="agbada.jpg" alt="Royal Agbada">
+                <img src="the obasanjo west african fashion img6.jpg" alt="Royal Agbada">
                 <h3>Royal Agbada</h3>
                 <p>$150</p>
                 <button onclick="addToCart(this)">Add to Cart</button>
             </div>
-            <div class="product" data-name="Senator Suit" data-price="120">
-                <img src="senator.jpg" alt="Senator Suit">
+            <div class="product" data-name="kaftan shirts" data-price="120">
+                <img src="the obasanjo west african fashion img5.jpg" alt="kaftan shits">
                 <h3>Senator Suit</h3>
                 <p>$120</p>
                 <button onclick="addToCart(this)">Add to Cart</button>
@@ -141,6 +141,31 @@
                     margin: 20px;
                     border-radius: 10px;
                 }
+                .product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px; /* Set fixed width */
+    height: auto; /* Let height adjust dynamically */
+}
+
+.product img {
+    width: 100%; /* Keep images responsive */
+    height: 300px; /* Set a fixed height */
+    object-fit: contain; /* Ensure the full image is visible */
+    border-radius: 5px;
+    background-color: #f8f8f8; /* Add a background to fill empty space */
+}
                 
             </style>
         </body>

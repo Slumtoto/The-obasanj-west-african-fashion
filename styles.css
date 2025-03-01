@@ -8,7 +8,7 @@ body {
 h1 {
     font-size: 2.0rem;
     margin: 20px 0;
-    margin-right: 550px;
+    margin-right: 570px;
 }
 
 .product-container {
@@ -30,9 +30,7 @@ h1 {
     width: 100%;
     border-radius: 10px;
 }
-h1 {
-    background-color: black ;
-}
+
 .logo {
     width: 150px; /* Adjust size as needed */
     display: block;

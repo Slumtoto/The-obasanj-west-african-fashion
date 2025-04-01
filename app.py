@@ -1,3 +1,9 @@
+@app.route('/')
+def home():
+    return render_template('yy.html')  # Connects to HTML file
+@app.route('/')
+def home():
+    return render_template('index.html')  # Connects to HTML file
 @app.route('/shop')
 def shop():
     products = [

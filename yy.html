@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obasanjo West African Fashion</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
+
 </head>
 <body>
     <header>
@@ -16,8 +17,8 @@
         <ul>
             <li><a href="yy.html">Home</a></li>
             <li><a href="index.html">Shop</a></li>
-            <li><a href="#cart">about us</a></li>
-            <li><a href="#contact">Contact us </a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
     
@@ -30,9 +31,9 @@
                 <p>$150</p>
                 <button onclick="addToCart(this)">Add to Cart</button>
             </div>
-            <div class="product" data-name="kaftan shirts" data-price="120">
-                <img src="the obasanjo west african fashion img5.jpg" alt="kaftan shits">
-                <h3>Senator Suit</h3>
+            <div class="product" data-name="Kaftan Shirts" data-price="120">
+                <img src="the obasanjo west african fashion img5.jpg" alt="Kaftan Shirts">
+                <h3>Kaftan Shirts</h3>
                 <p>$120</p>
                 <button onclick="addToCart(this)">Add to Cart</button>
             </div>
@@ -51,122 +52,188 @@
         <p>Total: $<span id="total-price">0</span></p>
     </section>
 
-    <script>
-        let cart = [];
-        
-        function addToCart(button) {
-            let product = button.parentElement;
-            let name = product.getAttribute('data-name');
-            let price = parseFloat(product.getAttribute('data-price'));
-            cart.push({ name, price });
-            updateCart();
-        }
+   <style>
+    /* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        function updateCart() {
-            let cartList = document.getElementById('cart-items');
-            let totalPrice = document.getElementById('total-price');
-            cartList.innerHTML = '';
-            let total = 0;
-            
-            cart.forEach(item => {
-                let li = document.createElement('li');
-                li.textContent = `${item.name} - $${item.price}`;
-                cartList.appendChild(li);
-                total += item.price;
-            });
-            totalPrice.textContent = total;
-        }
-    </script>
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+header {
+    background-color: #8B0000; /* Deep red */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        background-color: #f4f4f4;
-    }
-                header {
-                    background: #8B0000;
-                    color: white;
-                    padding: 20px;
-                }
-                .logo {
-                    width: 100px;
-                }
-                nav ul {
-                    list-style: none;
-                    padding: 0;
-                }
-                nav ul li {
-                    display: inline;
-                    margin: 0 15px;
-                }
-                nav a {
-                    text-decoration: none;
-                    color: #8B0000;
-                    font-weight: bold;
-                }
-                .product-container {
-                    display: flex;
-                    justify-content: center;
-                    gap: 20px;
-                    flex-wrap: wrap;
-                    padding: 20px;
-                }
-                .product {
-                    background: white;
-                    padding: 15px;
-                    border-radius: 10px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                }
-                .product img {
-                    width: 150px;
-                    height: auto;
-                }
-                button {
-                    background: #8B0000;
-                    color: white;
-                    border: none;
-                    padding: 10px;
-                    cursor: pointer;
-                    margin-top: 10px;
-                }
-                button:hover {
-                    background: #600000;
-                }
-                #cart {
-                    background: white;
-                    padding: 20px;
-                    margin: 20px;
-                    border-radius: 10px;
-                }
-                .product-container {
+header .logo {
+    width: 120px;
+    height: auto;
+}
+
+header h1 {
+    margin-top: 10px;
+    font-size: 2.5em;
+}
+nav {
+    background-color: #600000; /* Darker red */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+#shop {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#shop h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #8B0000;
+}
+
+.product-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
-    padding: 20px;
 }
 
 .product {
-    background: white;
-    padding: 15px;
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 250px; /* Set fixed width */
-    height: auto; /* Let height adjust dynamically */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: translateY(-5px);
 }
 
 .product img {
-    width: 100%; /* Keep images responsive */
-    height: 300px; /* Set a fixed height */
-    object-fit: contain; /* Ensure the full image is visible */
-    border-radius: 5px;
-    background-color: #f8f8f8; /* Add a background to fill empty space */
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
 }
-                
-            </style>
-        </body>
- </html>
+
+.product h3 {
+    margin: 15px 0 5px;
+    font-size: 1.5em;
+    color: #8B0000;
+}
+
+.product p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.product button {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 15px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #600000;
+}
+#cart {
+    background-color: white;
+    padding: 30px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#cart h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #8B0000;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-items li:last-child {
+    border-bottom: none;
+}
+
+#total-price {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #8B0000;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #8B0000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+
+   </style>
+
+     </style>
+</body>
+</html>

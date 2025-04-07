@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obasanjo West African Fashion</title>
-    <link rel="stylesheet" href="static/style.css">
-
+    <title>Document</title>
 </head>
 <body>
     <header>
@@ -49,11 +47,7 @@
         </div>
     </section>
     
-    <section id="cart">
-        <h2>Shopping Cart</h2>
-        <ul id="cart-items"></ul>
-        <p>Total: $<span id="total-price">0</span></p>
-    </section>
+
 
    <style>
     /* Resetting default margins and paddings */
@@ -233,44 +227,4 @@ footer a:hover {
         margin: 10px 0;
     }
 
-   </style>
-
-     </style>
-     <script>
-        // Initialize an empty cart array
-let cart = [];
-
-// Function to add a product to the cart
-function addToCart(productName, productPrice) {
-    // Check if the product already exists in the cart
-    const existingProduct = cart.find(item => item.name === productName);
-    if (existingProduct) {
-        existingProduct.quantity += 1;
-    } else {
-        cart.push({ name: productName, price: productPrice, quantity: 1 });
-    }
-    updateCartDisplay();
-}
-
-// Function to update the cart display
-function updateCartDisplay() {
-    const cartContainer = document.getElementById('cart');
-    cartContainer.innerHTML = ''; // Clear previous cart contents
-    cart.forEach(item => {
-        const cartItem = document.createElement('div');
-        cartItem.innerText = `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
-        cartContainer.appendChild(cartItem);
-    });
-}
-
-// Event listeners for "Add to Cart" buttons
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', event => {
-        const productName = event.target.getAttribute('data-name');
-        const productPrice = parseFloat(event.target.getAttribute('data-price'));
-        addToCart(productName, productPrice);
-    });
-});
-        </script>
-</body>
-</html>
+</style>

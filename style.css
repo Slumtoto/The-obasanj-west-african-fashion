@@ -1,33 +1,34 @@
 body {
-    font-family: monospace;
-    overflow-x: hidden;
-    font-size: 15px;
+font-family: monospace;
+overflow-x: hidden;
+font-size: 15px;
 }
 
 a {
-    text-decoration: none;
+text-decoration: none;
 }
 .container {
-    width: 1200px;
-    margin:auto;
-    max-width: 90%;
-    transition: transform 1s;
+width: 1200px;
+margin:auto;
+max-width: 90%;
+transition: transform 1s;
 }
 header img{
-   width: 60px;
-}
-header {
+    width: 60px;
+    }
+    header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-header .iconcart{
+    }
+    header .iconcart{
     position: relative;
     z-index: 1;
-}
-header .tatolquantity{
+    }
+    header .tatolquantity{
       position: absolute;
       top: 0;
+    
      
       font-size: x-large;
       background-color: #b31010;
@@ -40,7 +41,7 @@ header .tatolquantity{
       justify-content: center;
       align-items: center;  
       transform: translate(20px);
-
+    
     }
     .listproduct{
         display: grid;
@@ -53,7 +54,7 @@ header .tatolquantity{
     .listproduct .item h2{
         font-weight: 700%;
         font-size: x-large;
-
+    
     }
     .listproduct .item .price{
         font-size: x-large;
@@ -142,9 +143,74 @@ header .tatolquantity{
         font-weight: bold;
         cursor: pointer;
     }
-.cart .buttons a{
+    .cart .buttons a{
     color: #fff;
-}
-.cart  .button .checkout{
-   background-color: yellow;
-}
+    }
+    .cart  .button .checkout{
+    background-color: yellow;
+    }
+    .icon .tatolquantity {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: x-large;
+    background-color: #b31010;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    transform: translate(20px);
+    }
+    .cart .buttons {
+        display: flex; 
+        text-align: center;
+        padding: 0 20px;
+        justify-content: space-between;
+        
+    }
+    .cart .buttons .close {
+        margin-right: 10px;
+    }
+    .cart .buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 0 20px 20px;
+    }
+    
+    .cart .buttons .close {
+        background-color: black;
+        color: white;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    
+    .cart .buttons .checkout {
+        background-color: yellow;
+        color: black;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    
+    .cart .buttons .checkout a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    

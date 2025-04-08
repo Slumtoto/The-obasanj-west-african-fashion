@@ -1,0 +1,37 @@
+[
+    {
+        "id":  1,
+        "Name": "agbada",
+        "price": 50,
+        "image": "the obasanjo west african fashion img6.jpg",
+        
+    }
+    {
+        "id":  1,
+        "Name": "kaftan shirts",
+        "price": 505,
+        "image": "the obasanjo west african fashion img5.jpg",
+        
+    }
+    {
+        "id":  1,
+        "Name": "blouse",
+        "price": 50,
+        "image": "the obasanjo west african fashion img4.jpg",
+        
+    }
+    {
+        "id":  1,
+        "Name": "baubau",
+        "price": 50,
+        "image": "the obasanjo west african fashion img4.jpg",
+        
+    }
+    {
+        "id":  1,
+        "Name": "walking stick",
+        "price": 50,
+        "image": "the obasanjo west african fashion img3.jpg",
+        
+    }
+]

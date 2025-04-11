@@ -4,41 +4,35 @@
         "Name": "agbada",
         "price": 50,
         "image": "the obasanjo west african fashion img6.jpg"
-    },
+    }
     {
-        "id": 2,
-        "Name": "kaftan shirts",
-        "price": 505,
-        "image": "the obasanjo west african fashion img5.jpg"
-    },
-    {
-        "id": 3,
-        "Name": "blouse",
+        "id": 1,
+        "Name": "agbada",
         "price": 50,
-        "image": "the obasanjo west african fashion img4.jpg"
-    },
+        "image": "the obasanjo west african fashion img6.jpg"
+    }
     {
-        "id": 4,
-        "Name": "baubau",
+        "id": 1,
+        "Name": "agbada",
         "price": 50,
-        "image": "the obasanjo west african fashion img4.jpg"
-    },
+        "image": "the obasanjo west african fashion img6.jpg"
+    }
     {
-        "id": 5,
-        "Name": "trauser1",
+        "id": 1,
+        "Name": "agbada",
         "price": 50,
-        "image": "the obasanjo west african fashion img3.jpg"
-    },
+        "image": "the obasanjo west african fashion img6.jpg"
+    }
     {
-        "id": 6,
-        "Name": "trauser3",
+        "id": 1,
+        "Name": "agbada",
         "price": 50,
-        "image": "the obasanjo west african fashion img3.jpg"
-    },
+        "image": "the obasanjo west african fashion img6.jpg"
+    }
     {
-        "id": 7,
-        "Name": "trauser2",
+        "id": 1,
+        "Name": "agbada",
         "price": 50,
-        "image": "the obasanjo west african fashion img3.jpg"
+        "image": "the obasanjo west african fashion img6.jpg"
     }
 ]

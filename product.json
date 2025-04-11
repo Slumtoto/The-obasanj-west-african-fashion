@@ -1,37 +1,44 @@
 [
     {
-        "id":  1,
+        "id": 1,
         "Name": "agbada",
         "price": 50,
-        "image": "the obasanjo west african fashion img6.jpg",
-        
-    }
+        "image": "the obasanjo west african fashion img6.jpg"
+    },
     {
-        "id":  1,
+        "id": 2,
         "Name": "kaftan shirts",
         "price": 505,
-        "image": "the obasanjo west african fashion img5.jpg",
-        
-    }
+        "image": "the obasanjo west african fashion img5.jpg"
+    },
     {
-        "id":  1,
+        "id": 3,
         "Name": "blouse",
         "price": 50,
-        "image": "the obasanjo west african fashion img4.jpg",
-        
-    }
+        "image": "the obasanjo west african fashion img4.jpg"
+    },
     {
-        "id":  1,
+        "id": 4,
         "Name": "baubau",
         "price": 50,
-        "image": "the obasanjo west african fashion img4.jpg",
-        
-    }
+        "image": "the obasanjo west african fashion img4.jpg"
+    },
     {
-        "id":  1,
-        "Name": "walking stick",
+        "id": 5,
+        "Name": "trauser1",
         "price": 50,
-        "image": "the obasanjo west african fashion img3.jpg",
-        
+        "image": "the obasanjo west african fashion img3.jpg"
+    },
+    {
+        "id": 6,
+        "Name": "trauser3",
+        "price": 50,
+        "image": "the obasanjo west african fashion img3.jpg"
+    },
+    {
+        "id": 7,
+        "Name": "trauser2",
+        "price": 50,
+        "image": "the obasanjo west african fashion img3.jpg"
     }
 ]

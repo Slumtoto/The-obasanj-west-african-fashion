@@ -17,4 +17,15 @@ closeButton.addEventListener('click', () => {
       cart.style.right = '-100%';
       container.style.transform = 'translateX(0)';
   });
+
+  const products = [ /* paste the array above here */ ];
+let products = null;
+//get data from file json
+fetch ('product.json')
+.then (responce => responce.jason ())
+.then (data => {
+      products = data;
+      addDatToHTML();
+      
+})
   

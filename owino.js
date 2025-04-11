@@ -12,20 +12,34 @@ iconcart.addEventListener('click', () => {
         container.style.transform = 'translateX(0)';
     }
 });
-let closeButton = document.querySelector('.close');
-closeButton.addEventListener('click', () => {
-      cart.style.right = '-100%';
-      container.style.transform = 'translateX(0)';
-  });
 
-  const products = [ /* paste the array above here */ ];
+close.addEventListener('click', () => {
+    cart.style.right = '-100%';
+    container.style.transform = 'translateX(0)';
+});
+
 let products = null;
-//get data from file json
-fetch ('product.json')
-.then (responce => responce.jason ())
-.then (data => {
-      products = data;
-      addDatToHTML();
-      
-})
-  
+
+fetch('product.json')
+    .then(response => response.json()) // fixed .jason()
+    .then(data => {
+        products = data;
+        addDataToHTML();
+    });
+
+function addDataToHTML() {
+    let listproductHTML = document.querySelector('.listproduct');
+    listproductHTML.innerHTML = '';
+
+    products.forEach(product => {
+        let item = document.createElement('div');
+        item.classList.add('item');
+        item.innerHTML = `
+            <img src="${product.image}" alt="">
+            <h2>${product.name}</h2>
+            <div class="price">$${product.price}</div>
+            <button>add to cart</button>
+        `;
+        listproductHTML.appendChild(item);
+    });
+}

@@ -1,38 +1,15 @@
 [
-    {
-        "id": 1,
-        "Name": "agbada",
-        "price": 50,
-        "image": "the obasanjo west african fashion img6.jpg"
-    }
-    {
-        "id": 1,
-        "Name": "agbada",
-        "price": 50,
-        "image": "the obasanjo west african fashion img6.jpg"
-    }
-    {
-        "id": 1,
-        "Name": "agbada",
-        "price": 50,
-        "image": "the obasanjo west african fashion img6.jpg"
-    }
-    {
-        "id": 1,
-        "Name": "agbada",
-        "price": 50,
-        "image": "the obasanjo west african fashion img6.jpg"
-    }
-    {
-        "id": 1,
-        "Name": "agbada",
-        "price": 50,
-        "image": "the obasanjo west african fashion img6.jpg"
-    }
-    {
-        "id": 1,
-        "Name": "agbada",
-        "price": 50,
-        "image": "the obasanjo west african fashion img6.jpg"
-    }
+    [
+        {
+          "name": "Product Name 1",
+          "price": 550,
+          "image": "the obasanjo west african fashion img6.jpg"
+        },
+        {
+          "name": "Product Name 2",
+          "price": 420,
+          "image": "the obasanjo west african fashion img6.jpg"
+        }
+      ]
+      
 ]

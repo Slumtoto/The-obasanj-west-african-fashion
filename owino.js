@@ -25,38 +25,27 @@ fetch('product.json')
     .then(data => {
         products = data;
         addDataToHTML();
-        addExtraProducts();
+        addExtraProducts(); // if this is defined somewhere else
     });
 
 function addDataToHTML() {
     let listproductHTML = document.querySelector('.listproduct');
     listproductHTML.innerHTML = '';
 
-    products.forEach(product => {
-        let item = document.createElement('div');
-        item.classList.add('item');
-        item.innerHTML = `
-            <img src="${product.image}" alt="">
-            <h2>${product.Name}</h2>
-            <div class="price">$${product.price}</div>
-            <button>add to cart</button>
-        `;
-        listproductHTML.appendChild(item);
-    });
+    if (products != null) {
+        products.forEach(product => {
+            let newProduct = document.createElement('div');
+            newProduct.classList.add('item');
+            newProduct.innerHTML = `
+                <img src="the obasanjo west african fashion img6.jpg" alt="" srcset="">
+                <h2>product Name 1</h2>
+                <div class="price">$550</div>
+                <button>add to cart</button>
+            `;
+            listproductHTML.appendChild(newProduct);
+        });
+    }
 }
 
-function addExtraProducts() {
-    let listproductHTML = document.querySelector('.listproduct');
-
-    const newProduct = document.createElement('div');
-    newProduct.classList.add('item');
-    newProduct.innerHTML = `
-        <img src="the obasanjo west african fashion img6.jpg" alt="">
-        <h2>Product Name</h2>
-        <div class="price">$550</div>
-        <button>add to cart</button>
-    `;
-    listproductHTML.appendChild(newProduct);
-}
 
 

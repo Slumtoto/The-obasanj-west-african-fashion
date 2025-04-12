@@ -37,15 +37,34 @@ function addDataToHTML() {
             let newProduct = document.createElement('div');
             newProduct.classList.add('item');
             newProduct.innerHTML = `
-                <img src="the obasanjo west african fashion img6.jpg" alt="" srcset="">
-                <h2>product Name 1</h2>
-                <div class="price">$550</div>
-                <button>add to cart</button>
+                <img src="${product.image}" alt="" srcset="">
+                <h2>${product.Name}</h2>
+                <div class="price">$${product.price}</div>
+                <button onclick="add to cart"(${product.id})>add to cart</button>
             `;
             listproductHTML.appendChild(newProduct);
         });
     }
 }
+let listCart = [];
+ function addCart(${product.id}){
+    let productCopy = JSON.purce(JSON.stringify(products));
+    //if this product is not in the Cart
+    if(!listCart[$idProduct]){
+        let dataProduct = productCopy.filter(
+            product => product.id == $idProduct
+        )[0];
+        // add data product in cart
+        listCart[$idProduct] = dataProduct;
+
+    }else{
+       //if this product is ready in the cart
+       // i just icreased the cart
+       listCart[$idProduct] = dataProduct;
+       listCart[$idProduct].quantity;
+       
+    }
+ }
 
 
 

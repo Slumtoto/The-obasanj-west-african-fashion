@@ -1,9 +1,9 @@
-// Fixed JavaScript for Add to Cart Functionality (Preserving Original Images and Six Products)
 let iconcart = document.querySelector('.iconcart');
 let cart = document.querySelector('.cart');
 let container = document.querySelector('.container');
 let close = document.querySelector('.close');
 
+// Cart toggle logic
 iconcart.addEventListener('click', () => {
     if (cart.style.right === '-100%' || cart.style.right === '') {
         cart.style.right = '0';
@@ -19,92 +19,56 @@ close.addEventListener('click', () => {
     container.style.transform = 'translateX(0)';
 });
 
-let products = null;
+// Hardcoded product data
+let products = {
+    1: { id: 1, Name: "Product Name 1", price: 550, image: "the obasanjo west african fashion img6.jpg" },
+    2: { id: 2, Name: "Product Name 2", price: 550, image: "the obasanjo west african fashion img6.jpg" },
+    3: { id: 3, Name: "Product Name 3", price: 420, image: "the obasanjo west african fashion img6.jpg" },
+    4: { id: 4, Name: "Product Name 4", price: 300, image: "the obasanjo west african fashion img6.jpg" },
+    5: { id: 5, Name: "Product Name 5", price: 300, image: "the obasanjo west african fashion img6.jpg" },
+    6: { id: 6, Name: "Product Name 6", price: 300, image: "the obasanjo west african fashion img6.jpg" }
+};
+
 let listCart = {};
 
-fetch('product.json')
-    .then(response => response.json())
-    .then(data => {
-        products = data;
-        addDataToHTML();
-        checkCart();
-        addCartToHTML();
-    });
-
-function addDataToHTML() {
-    let listproductHTML = document.querySelector('.listproduct');
-    listproductHTML.innerHTML = '';
-
-    if (products != null) {
-        for (let i = 1; i <= 6; i++) {
-            let product = {
-                id: i,
-                name: `Product Name ${i}`,
-                price: 550,
-                image: 'the obasanjo west african fashion img6.jpg'
-            };
-            let newProduct = document.createElement('div');
-            newProduct.classList.add('item');
-            newProduct.innerHTML = `
-                <img src="${product.image}" alt="">
-                <h2>${product.name}</h2>
-                <div class="price">$${product.price}</div>
-                <button onclick="addCart(${product.id})">add to cart</button>
-            `;
-            listproductHTML.appendChild(newProduct);
-        }
-    }
-}
-
-function checkCart() {
-    let cookieValue = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('listcart='));
-
-    if (cookieValue) {
-        listCart = JSON.parse(cookieValue.split('=')[1]);
-    }
-}
-
 function addCart(idProduct) {
-    let productCopy = JSON.parse(JSON.stringify(products));
-
     if (!listCart[idProduct]) {
-        let dataProduct = productCopy.find(product => product.id == idProduct) || {
-            id: idProduct,
-            name: `Product Name ${idProduct}`,
-            price: 550,
-            image: 'the obasanjo west african fashion img6.jpg'
-        };
-        listCart[idProduct] = dataProduct;
-        listCart[idProduct].quantity = 1;
+        listCart[idProduct] = { ...products[idProduct], quantity: 1 };
     } else {
         listCart[idProduct].quantity++;
     }
 
-    // Save to cookie
-    let timeSave = "expires=Thu, 31 Dec 2025 23:59:59 UTC";
-    document.cookie = "listcart=" + JSON.stringify(listCart) + "; " + timeSave + "; path=/;";
-
+    document.cookie = "listcart=" + JSON.stringify(listCart) + "; path=/; expires=Thu, 31 Dec 2025 23:59:59 UTC;";
     addCartToHTML();
 }
 
 function addCartToHTML() {
-    // Clear and update cart UI logic here
-    console.log("Cart updated:", listCart);
-    
-    let tatolHTML = document.querySelector('.totalQuantity');
-    let totalQuantity = 0;
+    const listCartHTML = document.querySelector('.listcart');
+    listCartHTML.innerHTML = '';
 
-    if(listCart){
-        listCart.forEach(product =>{
-            if(product){
-                let newcart = document.createElement('div')
-                newcart.classList.add('item')
-            }
-        })
-    }
+    Object.values(listCart).forEach(product => {
+        let item = document.createElement('div');
+        item.classList.add('item');
+        item.innerHTML = `
+            <img src="${product.image}" alt="">
+            <div class="content">
+                <div class="name">${product.Name}</div>
+                <div class="price">$${product.price}</div>
+            </div>
+            <div class="quantity">
+                <button>-</button>
+                <span class="value">${product.quantity}</span>
+                <button>+</button>
+            </div>
+        `;
+        listCartHTML.appendChild(item);
+    });
+
+    // Update cart quantity badge
+    const totalQuantity = Object.values(listCart).reduce((sum, item) => sum + item.quantity, 0);
+    document.querySelector('.tatolquantity').innerText = totalQuantity;
 }
+
 
  
 

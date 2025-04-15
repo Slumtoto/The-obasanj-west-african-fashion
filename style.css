@@ -13,19 +13,19 @@ margin:auto;
 max-width: 90%;
 transition: transform 1s;
 }
-header img{
+paper img{
     width: 60px;
     }
-    header {
+    .paper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     }
-    header .iconcart{
+paper .iconcart{
     position: relative;
     z-index: 1;
     }
-    header .tatolquantity{
+    paper .tatolquantity{
       position: absolute;
       top: 0;
     
@@ -71,7 +71,7 @@ header img{
         color: #fff;
         width: 50%;
         border: none;
-        padding: 20px 30px;
+        
         box-shadow: 0 10px 50px #000;
         cursor: pointer;
         transform: translateX(-50%) translateY(100px);
